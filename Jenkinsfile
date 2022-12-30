@@ -1,28 +1,29 @@
-#!groovy
-
-pipeline {
-  agent none
+pipeline { 
+  agent any
+  
   stages {
-      stage('Git checkout') {
+    stage('Git checkout') { 
       steps {
-	git 'https://github.com/pooja34114/dockertest.git'
+	    git 'https://github.com/pooja34114/dockertest.git'
+	 }
 	}
-	}
-        stage('python Install') {
-    	agent {
-      	docker none {
-           image 'python:3.8-alpine'
-        }
-      }
+    stage('python Install') {
+    agent any {
+      docker {
+        image 'python:3.8-alpine'
+     }
+    }
       steps {
       	sh 'python --version'
       }
     }
     stage('Docker Build') {
-    	agent any
-        steps {
+    agent any
+      steps {
       	sh 'docker build -t pooja34114/dockertest:latest .'
       }
+}
+  }
 }
 //  stage('Docker Push') {
 //     agent any
@@ -33,5 +34,5 @@ pipeline {
 //         }
 //       }
 //     }
-  }
-}
+ 
+
