@@ -10,7 +10,7 @@ pipeline {
 	}
         stage('python Install') {
     	agent {
-      	docker {
+      	docker none {
            image 'python:3.8-alpine'
         }
       }
