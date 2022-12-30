@@ -1,5 +1,5 @@
 pipeline { 
-  agent none
+  agent none {
   
   stages {
     stage('Git checkout') { 
@@ -24,6 +24,7 @@ pipeline {
       }
 }
   }
+}
 }
 //  stage('Docker Push') {
 //     agent any
