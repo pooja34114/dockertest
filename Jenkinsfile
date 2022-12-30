@@ -5,7 +5,7 @@ pipeline {
   stages {
       stage('Git checkout') {
       steps {
-	git ''
+	git 'https://github.com/pooja34114/dockertest.git'
 	}
 	}
         stage('python Install') {
