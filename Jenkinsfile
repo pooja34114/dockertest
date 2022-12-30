@@ -2,12 +2,12 @@ pipeline {
   agent {
   
   stages {
-    stage('Git checkout') { 
+    stage ('Git checkout') { 
       steps {
 	    git 'https://github.com/pooja34114/dockertest.git'
 	 }
 	}
-    stage('python Install') {
+    stage ('python Install') {
     agent {
       docker {
         image 'python:3.8-alpine'
@@ -17,7 +17,7 @@ pipeline {
       	sh 'python --version'
       }
     }
-    stage('Docker Build') {
+    stage ('Docker Build') {
     agent {
       steps {
       	sh 'docker build -t pooja34114/dockertest:latest .'
