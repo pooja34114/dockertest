@@ -3,9 +3,9 @@
 pipeline {
   agent none
   stages {
-      stage('Cloning our Git') {
+      stage('Git checkout') {
       steps {
-	git 'https://github.com/ismailyenigul/hacicenkins.git'
+	git ''
 	}
 	}
         stage('python Install') {
