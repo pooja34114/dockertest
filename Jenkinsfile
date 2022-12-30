@@ -1,5 +1,5 @@
 pipeline { 
-  agent any
+  agent none
   
   stages {
     stage('Git checkout') { 
@@ -8,7 +8,7 @@ pipeline {
 	 }
 	}
     stage('python Install') {
-    agent any {
+    agent none {
       docker {
         image 'python:3.8-alpine'
      }
@@ -18,7 +18,7 @@ pipeline {
       }
     }
     stage('Docker Build') {
-    agent any
+    agent none
       steps {
       	sh 'docker build -t pooja34114/dockertest:latest .'
       }
