@@ -4,10 +4,10 @@ pipeline {
    * Run everything on an existing agent configured with a label 'docker'.
    * This agent will need docker, git and a jdk installed at a minimum.
    */
-  agent {
+  agent none{
   stages {
     stage('Git checkout') {
-      agent {	  
+      agent none {	  
       steps {
           git url: 'https://github.com/pooja34114/dockertest.git', credentialsId: 'git-credentials', branch: 'master'
 	 }
