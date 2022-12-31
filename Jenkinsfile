@@ -3,8 +3,8 @@ pipeline {
   
   stages {
     stage ('Git checkout') { 
-      steps {
-	    git 'https://github.com/pooja34114/dockertest.git'
+	steps {
+          git url: 'https://github.com/pooja34114/dockertest.git', credentialsId: 'git-credentials', branch: 'master'
 	 }
 	}
     stage ('python Install') {
